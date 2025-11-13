@@ -3,12 +3,21 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Rolagem suave */
+}
+
+body {
   font-family: "Roboto", sans-serif;
   color: #303030;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 section {
+  scroll-margin-top: 80px; /* Margem para compensar o header */
   width: 100%;
 }
 
@@ -16,28 +25,41 @@ section {
   max-width: 1024px;
   margin: 0 auto;
   padding: 50px 0;
-}
-
-html {
-  scroll-behavior: smooth; /* Rolagem suave */
-}
-
-section {
-  scroll-margin-top: 80px; /* Margem para compensar o header */
-}
-
-a {
-  text-decoration: none;
+  width: 100%;
 }
 
 .titulo-secao {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   text-transform: uppercase;
   color: #01579b; /*#00bebc;*#01579b;*/
   font-weight: 700;
-  font-size: 40px;
+  font-size: 32px;
   text-shadow: 1px 1px #fff;
+}
+
+.resumo-secao {
+  padding-bottom: 30px;
+  text-align: center;
+  line-height: 26px;
+  padding: 0 15px 0;
+}
+
+.card-servicos,
+.card-planos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-flow: column wrap;
+  border: solid 1px #006b5e;
+  border-radius: 10px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* HEADER*/
@@ -53,8 +75,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
-  padding: 20px;
+  height: 70px;
+  padding: 30px;
   width: 100%;
 }
 
@@ -86,7 +108,7 @@ a {
 
 .menu li a {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .menu li a:link,
@@ -106,7 +128,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  height: 100vh;
+  height: 500px;
   width: 100%;
 }
 
@@ -144,14 +166,10 @@ a {
 
 /* SERVIÇOS */
 
-.resumo-secao {
-  padding-bottom: 30px;
-  text-align: center;
-  line-height: 26px;
-}
 .container-servicos,
 .container-planos {
   width: 1024px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -160,20 +178,8 @@ a {
 }
 
 .card-servicos {
-  width: 300px;
+  width: calc(80% / 3);
   height: 200px;
-}
-.card-servicos,
-.card-planos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-flow: column wrap;
-  border: solid 1px #006b5e;
-  border-radius: 10px;
-  padding: 20px 10px;
-  text-align: center;
 }
 
 .card-servicos h3,
@@ -235,23 +241,23 @@ a {
 }
 
 /* PLANOS */
+
 .card-planos {
-  justify-content: flex-start;
   width: 210px;
-  height: 400px;
+  height: auto;
   padding: 20px 10px;
 }
 
 .lista-planos {
   width: 100%;
-  padding: 35px 0;
+  padding: 20px 0;
   list-style-type: none;
   margin: 0;
 }
 .lista-planos li {
   padding-top: 10px;
   padding-bottom: 15px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px #dfdddd;
   width: 80%;
   margin: 0 auto;
   position: relative;
@@ -338,6 +344,10 @@ a {
     rgba(0, 201, 162, 1) 50%,
     rgba(252, 252, 134, 1) 100%
   );
+  width: 100%;
+}
+.iframe {
+  margin-top: 20px;
 }
 
 .mapa {
@@ -382,4 +392,48 @@ a {
 .paragrafo-desenvolvedor {
   font-size: 10px;
   padding-top: 5px;
+}
+
+/* ------- RESPONSIVIDADE -------------------*/
+@media (max-width: 425px) {
+  body {
+    font-size: 12px;
+  }
+
+  section {
+    scroll-margin-top: 250px;
+  }
+
+  .titulo-secao {
+    font-size: 18px;
+  }
+  .menu {
+    display: none;
+  }
+
+  .foto-banner,
+  .foto-efeito-parallax {
+    display: none;
+  }
+  .container-servicos,
+  .container-planos,
+  .container-rodape {
+    flex-flow: row wrap;
+  }
+  .card-servicos h3 {
+    font-size: 13px;
+  }
+  .card-servicos {
+    width: 40%;
+    height: 200px;
+    flex: column;
+  }
+
+  .card-planos {
+    width: 80%;
+    height: auto;
+  }
+  .container-rodape {
+    flex-flow: column wrap;
+  }
 }
