@@ -34,7 +34,7 @@ section {
   text-transform: uppercase;
   color: #01579b; /*#00bebc;*#01579b;*/
   font-weight: 700;
-  font-size: 32px;
+  font-size: 28px;
   text-shadow: 1px 1px #fff;
 }
 
@@ -63,8 +63,7 @@ a {
 }
 
 /* HEADER*/
-.logo img,
-.menu-reduzido img {
+.logo img {
   width: 30px;
   height: 30px;
 }
@@ -92,9 +91,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  padding: 30px;
-  width: 100%;
+  height: 60px;
+  padding: 20px;
 }
 
 .menu {
@@ -109,7 +107,7 @@ a {
 
 .menu li a {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .menu li a:link,
@@ -122,14 +120,10 @@ a {
   color: #ff6d00;
 }
 
-.menu-reduzido {
-  display: none;
-}
-
 /* BANNER */
 
 .foto-banner {
-  background-image: url("../assets/jovem-desportista-feliz-usando-telefone-celular-e-ouvindo-musica-enquanto-se-exercita-no-centro-de-fitness-copiar-espaco.jpg");
+  background-image: url("../assets/editada-jovem-desportista-feliz-usando-telefone-celular-e-ouvindo-musica-enquanto-se-exercita-no-centro-de-fitness-copiar-espaco.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -145,6 +139,7 @@ a {
 .texto-banner {
   width: 50%;
   margin: 0 30px 0;
+  padding-left: 40px;
 }
 .titulo-banner,
 .subtitulo-banner {
@@ -161,6 +156,32 @@ a {
 .subtitulo-banner {
   font-size: 20px;
   padding-top: 5px;
+}
+.inscreva-se {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 35px;
+  gap: 15px;
+}
+.inscreva-se img {
+  width: 30px;
+  height: 30px;
+}
+
+.inscreva-se a {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.link-inscreva-se:link,
+.link-inscreva-se:visited {
+  color: #fff;
+}
+
+.link-inscreva-se:hover,
+.link-inscreva-se:active {
+  color: #ff6d00;
 }
 
 /* SOBRE NÓS */
@@ -181,6 +202,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  margin-top: 20px;
 }
 
 .card-servicos {
@@ -320,21 +342,17 @@ a {
 .link-whatsapp {
   font-size: 30px;
   font-weight: 700;
-  border: solid 1px #fff;
-  border-radius: 50px;
   padding: 30px 20px;
 }
 
 .link-whatsapp:link,
 .link-whatsapp:visited {
   color: #fff;
-  border: #fff;
 }
 
 .link-whatsapp:hover,
 .link-whatsapp:active {
   color: #002b3c;
-  border: #002b3c;
 }
 
 .logo-whatsapp {
@@ -402,12 +420,39 @@ a {
 
 /* ------- RESPONSIVIDADE -------------------*/
 @media (max-width: 425px) {
+  .menu li a {
+    font-size: 14px;
+  }
+  .titulo-banner {
+    font-size: 12px;
+  }
+  .lista-diferenciais li::before {
+    margin-left: -30px;
+  }
+  .lista-diferenciais li {
+    width: 60%;
+    text-align: center;
+  }
+  .card-planos {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .card-planos {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
   body {
     font-size: 12px;
   }
 
   section {
-    scroll-margin-top: 200px;
+    scroll-margin-top: 100px;
   }
 
   .limitar-secao {
@@ -416,31 +461,46 @@ a {
   }
 
   .resumo-secao {
-    padding: 0 25px 0;
+    padding: 0 40px 0;
+    margin-bottom: 15px;
   }
 
   .titulo-secao {
     font-size: 18px;
   }
-  .menu {
-    display: none;
-  }
-  .menu-reduzido {
-    display: inline;
+  .cabecalho {
+    flex-direction: column;
+    height: 20%;
+    gap: 15px;
   }
 
-  .menu-aberto {
+  .titulo-logo {
+    display: flex;
+    gap: 5px;
+  }
+  .logo {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu li {
+    font-size: 11px;
   }
 
   .foto-banner {
-    height: 350px;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 80vh;
   }
 
   .texto-banner {
-    margin-left: 0;
-    width: 350px;
+    width: 50%;
+    margin: 50px 10px;
+    padding-left: 5px;
   }
 
   .titulo-banner {
@@ -449,6 +509,9 @@ a {
 
   .subtitulo-banner {
     font-size: 15px;
+  }
+  .secao-banner {
+    padding-top: 40px;
   }
 
   .foto-efeito-parallax {
@@ -470,14 +533,13 @@ a {
   }
   .card-servicos {
     width: 40%;
-    height: 200px;
+    height: auto;
     flex: column;
   }
-
-  .card-planos {
-    width: 80%;
-    height: auto;
+  .lista-diferencias li {
+    text-align: center;
   }
+
   .container-rodape {
     flex-flow: column wrap;
     text-align: center;
