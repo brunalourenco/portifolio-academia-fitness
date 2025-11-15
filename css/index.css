@@ -418,6 +418,21 @@ a {
   padding-top: 5px;
 }
 
+.logo-whatsapp-fixo {
+  position: fixed;
+  right: 40px;
+  bottom: 60px;
+  width: 60px;
+}
+
+.logo-whatsapp-fixo:hover {
+  transform: translate(5px, 5px);
+}
+
+.logo-whatsapp-fixo img {
+  width: 100%;
+}
+
 /* ------- RESPONSIVIDADE -------------------*/
 @media (max-width: 425px) {
   .menu li a {
@@ -443,6 +458,10 @@ a {
   .card-planos {
     width: 40%;
     height: auto;
+  }
+
+  .logo-whatsapp-fixo {
+    display: none;
   }
 }
 
